@@ -13,9 +13,19 @@ function normalize (arr) {
 		if (arr[i] < min) min = arr[i];
 	}
 
-	if (max === Infinity || min === -Infinity) {
+	if (max === Infinity && min === -Infinity) {
 		for (let i = 0, l = arr.length; i < l; i++) {
-			arr[i] = arr[i] === min ? min : arr[i] === max ? max : 0;
+			arr[i] = arr[i] === max ? 1 : arr[i] === min ? 0 : .5
+		}
+	}
+	else if (max === Infinity) {
+		for (let i = 0, l = arr.length; i < l; i++) {
+			arr[i] = arr[i] === max ? 1 : 0
+		}
+	}
+	else if (min === -Infinity) {
+		for (let i = 0, l = arr.length; i < l; i++) {
+			arr[i] = arr[i] === min ? 0 : 1
 		}
 	}
 	else {
