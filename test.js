@@ -1,3 +1,5 @@
+'use strict'
+
 const norm = require('./')
 const assert = require('assert')
 
