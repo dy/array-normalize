@@ -1,7 +1,7 @@
 {
   "name": "array-normalize",
   "version": "1.0.1",
-  "description": "Normalize array to zero mean and unit variance",
+  "description": "Normalize array (possibly n-dimensional) to zero mean and unit variance",
   "main": "index.js",
   "scripts": {
     "test": "node test"

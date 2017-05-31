@@ -2,35 +2,39 @@
 
 module.exports = normalize;
 
-function normalize (arr) {
+function normalize (arr, dim) {
 	if (!arr || arr.length == null) throw Error('Argument should be an array')
 
-	let max = -Infinity;
-	let min = Infinity;
+	if (dim == null) dim = 1
 
-	for (let i = 0, l = arr.length; i < l; i++) {
-		if (arr[i] > max) max = arr[i];
-		if (arr[i] < min) min = arr[i];
-	}
+	for (var offset = 0; offset < dim; offset++) {
+		var max = -Infinity, min = Infinity, i = offset, l = arr.length;
 
-	if (max === Infinity && min === -Infinity) {
-		for (let i = 0, l = arr.length; i < l; i++) {
-			arr[i] = arr[i] === max ? 1 : arr[i] === min ? 0 : .5
+		for (; i < l; i+=dim) {
+			if (arr[i] > max) max = arr[i];
+			if (arr[i] < min) min = arr[i];
 		}
-	}
-	else if (max === Infinity) {
-		for (let i = 0, l = arr.length; i < l; i++) {
-			arr[i] = arr[i] === max ? 1 : 0
+
+		if (max === Infinity && min === -Infinity) {
+			for (i = offset; i < l; i+=dim) {
+				arr[i] = arr[i] === max ? 1 : arr[i] === min ? 0 : .5
+			}
 		}
-	}
-	else if (min === -Infinity) {
-		for (let i = 0, l = arr.length; i < l; i++) {
-			arr[i] = arr[i] === min ? 0 : 1
+		else if (max === Infinity) {
+			for (i = offset; i < l; i+=dim) {
+				arr[i] = arr[i] === max ? 1 : 0
+			}
 		}
-	}
-	else {
-		for (let i = 0, l = arr.length; i < l; i++) {
-			arr[i] = (arr[i] - min) / (max - min)
+		else if (min === -Infinity) {
+			for (i = offset; i < l; i+=dim) {
+				arr[i] = arr[i] === min ? 0 : 1
+			}
+		}
+		else {
+			var range = max - min
+			for (i = offset; i < l; i+=dim) {
+				arr[i] = (arr[i] - min) / range
+			}
 		}
 	}
 
