@@ -1,26 +1,29 @@
 {
-  "name": "array-normalize",
-  "version": "1.1.1",
-  "description": "Normalize array (possibly n-dimensional) to zero mean and unit variance",
+  "name": "array-bounds",
+  "version": "1.0.0",
+  "description": "Find [nd-]array min/max values",
   "main": "index.js",
   "scripts": {
     "test": "node test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfcreative/array-normalize.git"
+    "url": "git+https://github.com/dfcreative/array-bounds.git"
   },
   "keywords": [
     "array",
-    "normalize",
-    "normal",
+    "bounds",
+    "limits",
+    "array min",
+    "min",
+    "max",
     "statistics",
     "samples"
   ],
   "author": "Dima Yv <dfcreative@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dfcreative/array-normalize/issues"
+    "url": "https://github.com/dfcreative/array-bounds/issues"
   },
-  "homepage": "https://github.com/dfcreative/array-normalize#readme"
+  "homepage": "https://github.com/dfcreative/array-bounds#readme"
 }
