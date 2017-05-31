@@ -1,4 +1,4 @@
-# array-normalize
+# array-normalize  [![experimental](https://img.shields.io/badge/stability-unstable-yellow.svg)](http://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/dfcreative/array-normalize.svg)](https://travis-ci.org/dfcreative/array-normalize)
 
 Normalize array in-place to zero mean and unit variance.
 
