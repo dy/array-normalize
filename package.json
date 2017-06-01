@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/dfcreative/array-normalize/issues"
   },
-  "homepage": "https://github.com/dfcreative/array-normalize#readme"
+  "homepage": "https://github.com/dfcreative/array-normalize#readme",
+  "dependencies": {
+    "array-bounds": "^1.0.0"
+  }
 }

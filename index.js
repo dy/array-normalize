@@ -1,19 +1,17 @@
 'use strict'
 
+var getBounds = require('array-bounds')
+
 module.exports = normalize;
 
-function normalize (arr, dim) {
+function normalize (arr, dim, bounds) {
 	if (!arr || arr.length == null) throw Error('Argument should be an array')
 
 	if (dim == null) dim = 1
+	if (bounds == null) bounds = getBounds(arr, dim)
 
 	for (var offset = 0; offset < dim; offset++) {
-		var max = -Infinity, min = Infinity, i = offset, l = arr.length;
-
-		for (; i < l; i+=dim) {
-			if (arr[i] > max) max = arr[i];
-			if (arr[i] < min) min = arr[i];
-		}
+		var max = bounds[dim + offset], min = bounds[offset], i = offset, l = arr.length;
 
 		if (max === Infinity && min === -Infinity) {
 			for (i = offset; i < l; i+=dim) {
