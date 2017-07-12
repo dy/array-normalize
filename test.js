@@ -18,3 +18,6 @@ assert.deepEqual(norm(d.slice(), 2), [0, 0, .1, .1, 1, 1])
 
 let e = [0, 0, .1, .2, 1, 2]
 assert.deepEqual(norm(e.slice(), 2, getBounds(e, 2)), [0, 0, .1, .1, 1, 1])
+
+let f = [0, .25, 1, .25]
+assert.deepEqual(norm(f, 2, [0, .5, 1, .5]), [0, .5, 1, .5])
