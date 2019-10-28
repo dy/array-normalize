@@ -21,3 +21,6 @@ assert.deepEqual(norm(e.slice(), 2, getBounds(e, 2)), [0, 0, .1, .1, 1, 1])
 
 let f = [0, .25, 1, .25]
 assert.deepEqual(norm(f, 2, [0, .5, 1, .5]), [0, .5, 1, .5])
+
+let g = [0, 0, NaN, NaN, 1, 1]
+assert.deepEqual(norm(g, 2).map(v => isNaN(v) ? -1 : v), [0, 0, -1, -1, 1, 1])

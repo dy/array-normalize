@@ -8,10 +8,16 @@ Normalize array to unit length, that is 0..1 range. See [feature scaling](https:
 const normalize = require('array-normalize')
 
 normalize([0, 50, 100]) // [0, .5, 1]
+normalize([0, 0, .1, .2, 1, 2], 2) // [0, 0, .1, .1, 1, 1]
+normalize([0, .25, 1, .25], 2, [0, .5, 1, .5]) // [0, .5, 1, .5])
 ```
 
 ## API
 
-### array = normalize(array, n=1, bounds?)
+### array = normalize(array, dimensions=1, bounds?)
 
-Normalizes n-dimensional array in-place using dimensions `n` as stride, ie. for 1d array the expected data layout is `[x, x, x, ...]` for 2d is `[x, y, x, y, ...]`, etc. Every dimension is normalized independently, so 2d array is normalized to unit square `[0, 0, 1, 1]`. Optionally pass `bounds` box if you know min/max values to optimize calculations.
+Normalizes n-dimensional array in-place using `dimensions` as stride, ie. for 1d array the expected data layout is `[x, x, x, ...]` for 2d is `[x, y, x, y, ...]`, etc.
+
+Every dimension is normalized independently, eg. 2d array is normalized to unit square `[0, 0, 1, 1]`.
+
+Optional `bounds` box can predefine min/max to optimize calculations.
