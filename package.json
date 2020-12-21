@@ -3,6 +3,12 @@
   "version": "1.1.4",
   "description": "Normalize array (possibly n-dimensional) to zero mean and unit variance",
   "main": "index.js",
+  "browser": "index.js",
+  "module": "./index.mjs",
+  "exports": {
+    "require": "./index.js",
+    "import": "./index.mjs"
+  },
   "scripts": {
     "test": "node test"
   },
@@ -17,7 +23,7 @@
     "statistics",
     "samples"
   ],
-  "author": "Dima Yv <dfcreative@gmail.com>",
+  "author": "Dima Iv <dfcreative@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dy/array-normalize/issues"

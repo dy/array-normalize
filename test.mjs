@@ -1,8 +1,8 @@
 'use strict'
 
-const norm = require('.')
-const assert = require('assert')
-const getBounds = require('array-bounds')
+import norm from './index.mjs'
+import assert from 'assert'
+import getBounds from 'array-bounds'
 
 let a = [-Infinity, -1, 0, 1, Infinity]
 assert.deepStrictEqual(norm(a.slice()), [0, 0.5, 0.5, 0.5, 1])
