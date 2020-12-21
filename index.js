@@ -11,30 +11,25 @@ function normalize (arr, dim, bounds) {
 	if (bounds == null) bounds = getBounds(arr, dim)
 
 	for (var offset = 0; offset < dim; offset++) {
-		var max = bounds[dim + offset], min = bounds[offset], i = offset, l = arr.length;
+		var max = bounds[dim + offset], min = bounds[offset], i = offset, l = arr.length, range;
 
 		if (max === Infinity && min === -Infinity) {
-			for (i = offset; i < l; i+=dim) {
-				arr[i] = arr[i] === max ? 1 : arr[i] === min ? 0 : .5
-			}
+			for (i = offset; i < l; i+=dim) arr[i] = arr[i] === max ? 1 : arr[i] === min ? 0 : .5
 		}
 		else if (max === Infinity) {
-			for (i = offset; i < l; i+=dim) {
-				arr[i] = arr[i] === max ? 1 : 0
-			}
+			for (i = offset; i < l; i+=dim) arr[i] = arr[i] === max ? 1 : 0
 		}
 		else if (min === -Infinity) {
-			for (i = offset; i < l; i+=dim) {
-				arr[i] = arr[i] === min ? 0 : 1
-			}
+			for (i = offset; i < l; i+=dim) arr[i] = arr[i] === min ? 0 : 1
+		}
+		else if (min === max) {
+			for (i = offset; i < l; i+=dim) if (!isNaN(arr[i])) arr[i] =  .5
+		}
+		else if (min === 0) {
+			for (i = offset; i < l; i+=dim) arr[i] = arr[i] / max
 		}
 		else {
-			var range = max - min
-			for (i = offset; i < l; i+=dim) {
-				if (!isNaN(arr[i])) {
-					arr[i] = range === 0 ? .5 : (arr[i] - min) / range
-				}
-			}
+			for (i = offset, range = max - min; i < l; i+=dim) arr[i] = (arr[i] - min) / range
 		}
 	}
 
