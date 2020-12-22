@@ -1,4 +1,4 @@
-# array-normalize  [![experimental](https://img.shields.io/badge/stability-unstable-yellow.svg)](http://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/dy/array-normalize.svg)](https://travis-ci.org/dy/array-normalize)
+# array-normalize  [![experimental](https://img.shields.io/badge/stability-unstable-yellow.svg)](http://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/dy/array-normalize.svg)](https://travis-ci.com/dy/array-normalize)
 
 Normalize array to unit length, that is 0..1 range. See [feature scaling](https://en.wikipedia.org/wiki/Feature_scaling).
 
