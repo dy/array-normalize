@@ -1,5 +1,4 @@
-# array-normalize  [![experimental](https://img.shields.io/badge/stability-unstable-yellow.svg)](http://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/dy/array-normalize.svg)](https://travis-ci.com/dy/array-normalize)
-
+# array-normalize  [![experimental](https://img.shields.io/badge/stability-unstable-yellow.svg)](http://github.com/badges/stability-badges) 
 Normalize array to unit length, that is 0..1 range. See [feature scaling](https://en.wikipedia.org/wiki/Feature_scaling).
 
 [![npm install array-normalize](https://nodei.co/npm/array-normalize.png?mini=true)](https://npmjs.org/package/array-normalize/)
